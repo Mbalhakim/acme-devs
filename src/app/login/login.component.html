@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inloggen</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+<div class="message" *ngIf="message">{{ message }}</div>
+
+<div class="login-container">
+  <div class="login-box">
+    <div class="logo-container">
+      <img src="/assets/logo-black.jpg" alt="Logo" class="logo">
+    </div>
+    <h2>Inloggen</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Gebruikersnaam" required>
+      </div>
+      <div class="input-group">
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Wachtwoord" required>
+      </div>
+      <button type="submit">Inloggen</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,9 +1,17 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideRouter, Route } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component'; // Importeer HomeComponent
 
-import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+const routes: Route[] = [
+  { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent } // Voeg Home route toe
+];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideHttpClient(withFetch()),
+    provideRouter(routes)
+  ]
 };

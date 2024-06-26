@@ -1,0 +1,116 @@
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1; /* Zorg ervoor dat deze correct is ingesteld */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Dek de volledige viewporthoogte af */
+  background: url('/assets/noord.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Gebruik min-height in plaats van height */
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 80%; /* Aanpassing: gebruik een percentage voor de breedte */
+  max-width: 600px; /* Aanpassing: stel een maximale breedte in voor responsief gedrag */
+  text-align: center;
+  z-index: 1; /* Zorg ervoor dat deze een hogere z-index heeft dan -1 */
+  position: relative;
+  margin: 20px; /* Aanpassing: voeg marges toe voor een betere visuele indeling */
+}
+
+.logo-container {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container .logo {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.login-box h2 {
+  margin-top: 60px; /* Voeg ruimte toe boven de koptekst om plaats te maken voor het logo */
+  margin-bottom: 20px;
+  color: #4caf50;
+  font-weight: 700;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 10px;
+  color: red; /* Stel de gewenste tekstkleur in */
+}
